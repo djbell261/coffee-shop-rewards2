@@ -1,16 +1,16 @@
 package derwinbell;
 
-public class Purchase {
+public class CoffeeItem {
     private String itemName;
 
     private double price;
 
-    private boolean isDrink;
 
-    public Purchase(String itemName, double price, boolean isDrink){
+
+    public CoffeeItem(String itemName, double price ){
             this.itemName = itemName;
             this.price = price;
-            this.isDrink = isDrink;
+
 
     }
 
@@ -30,11 +30,5 @@ public class Purchase {
         this.price = price;
     }
 
-    public boolean getDrink() {
-        return isDrink;
-    }
 
-    public void setDrink(boolean drink) {
-        isDrink = drink;
-    }
 }

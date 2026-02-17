@@ -6,12 +6,20 @@ public class Customer {
 
     private String phoneNumber;
 
-    private int points;
 
-    public Customer(String name, String phoneNumber, int points){
+
+    private int drinksPurchase;
+
+    public Customer(){
+        this("Guest", "000-000-0000", 0);
+    }
+
+    public Customer(String name, String phoneNumber, int drinksPurchase){
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.points = points;
+
+        this.drinksPurchase = drinksPurchase;
+
 
     }
 
@@ -31,11 +39,27 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getPoints() {
-        return points;
+
+
+    public int getDrinksPurchase() {
+        return drinksPurchase;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
+    public void setDrinksPurchase(int drinksPurchase) {
+        this.drinksPurchase = drinksPurchase;
+    }
+
+    public int count(int drinks){
+        setDrinksPurchase(drinks);
+
+        return drinks;
+    }
+
+    public void reward(int drinks){
+        if(drinks >= 5){
+            System.out.println("CONGRATS! Reward reached. Next drink is on us!");
+
+        }
+
     }
 }
