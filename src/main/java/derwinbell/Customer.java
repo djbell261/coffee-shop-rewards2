@@ -55,11 +55,7 @@ public class Customer {
         return drinks;
     }
 
-    public void reward(int drinks){
-        if(drinks >= 5){
-            System.out.println("CONGRATS! Reward reached. Next drink is on us!");
-
-        }
-
+    public boolean hasReward() {
+        return this.drinksPurchase >= 5;
     }
 }

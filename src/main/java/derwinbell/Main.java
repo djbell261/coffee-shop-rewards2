@@ -28,8 +28,10 @@ public class Main {
         do {
             playAgain = "n";
             System.out.println(customer.getName() + "| Drinks Toward Rewards: " + customer.getDrinksPurchase());
-            if(customer.getDrinksPurchase() >= 5){
-                customer.reward(drinks);
+            if(customer.hasReward()){
+
+                System.out.println("CONGRATS! Reward reached. Next drink is FREE!");
+
                 drinks = 0;
                 int freeDrink = scan.nextInt();
                 switch (freeDrink){
@@ -58,12 +60,15 @@ public class Main {
                         purchase.setItemName("Cold Brew");
                         purchase.setPrice(0);
                         break;
+                    default:
+                        System.out.println("Invalid");
+                        break;
                 }
 
 
             }
             else{
-                System.out.println("Select item\n1. Espresso 5.00\n2. Latte 2.00\n3. Cappuccino 15.00\n4. Americano 4.00\n5. Mocha 2.50\n6. Cold Brew 1.50");
+                System.out.println("Select item #\n1. Espresso 5.00\n2. Latte 2.00\n3. Cappuccino 15.00\n4. Americano 4.00\n5. Mocha 2.50\n6. Cold Brew 1.50");
                 int userInput = scan.nextInt();
 
                 if(userInput > 6 || userInput < 1) {
@@ -108,6 +113,10 @@ public class Main {
                         purchase.setPrice(1.52);
 
                         customer.count(drinks++);
+                        break;
+
+                    default:
+                        System.out.println("Invalid");
                         break;
                 }
             }
